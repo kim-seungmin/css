@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div.header {
+            height: 50vh;
+            background-color: antiquewhite;
+            text-align: center;
+            position: relative;
+            z-index: -1;
+        }
+
+        div.text{
+            position: fixed;
+            color: black;
+            opacity: 1;
+            font-size: 10em;
+            top: 20%; /* 원하는 위치로 조정 */
+            left: 50%; /* 원하는 위치로 조정 */
+            transform: translate(-50%, -50%); /* 중앙 정렬 */
+            z-index: -1;
+        }
+        
+        div.body{
+            height: 200vh;
+            background-color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="text">TEXT</div>
+</div>
+<div class="body"></div>
+
+<script>
+    let text = document.querySelector('.text');
+    window.addEventListener('scroll', function(){
+        let value = window.scrollY;
+        text.style.opacity = 1-value/500;
+        
+    })
+</script>
+</body>
+</html>
